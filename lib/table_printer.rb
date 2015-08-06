@@ -29,11 +29,11 @@ module Prime
 
     def space_before_row(number)
       width = x_col_width - number.length
-      " " * width
+      " " * (width + 1)
     end
 
     def heading
-      line = " " * x_col_width
+      line = " " * (x_col_width + 1)
       line << " |"
       @prime_numbers.each do |prime_number|
         line << " "
@@ -45,7 +45,7 @@ module Prime
     end
 
     def x_divider
-      line = "-" * x_col_width
+      line = "-" * (x_col_width + 1)
       line << "-+"
       @prime_numbers.each do |count|
         line << "-" * (max_num + 1)
