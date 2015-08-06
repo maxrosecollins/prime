@@ -26,17 +26,17 @@ module Prime
 
       begin
         opt_parser.parse!
-        mandatory = [:number]                                            # Enforce the presence of
-        missing = mandatory.select{ |param| @options[param].nil? }        # the -t and -f switches
-        unless missing.empty?                                            #
-          puts "Missing options: #{missing.join(', ')}"                  #
-          puts opt_parser                                                  #
-          exit                                                           #
-        end                                                              #
-      rescue OptionParser::InvalidOption, OptionParser::MissingArgument      #
-        puts $!.to_s                                                           # Friendly output when parsing fails
-        puts opt_parser                                                          #
-        exit                                                                   #
+        mandatory = [:number]
+        missing = mandatory.select{ |param| @options[param].nil? }
+        unless missing.empty?
+          puts "Missing options: #{missing.join(', ')}"
+          puts opt_parser
+          exit
+        end
+      rescue OptionParser::InvalidOption, OptionParser::MissingArgument
+        puts $!.to_s
+        puts opt_parser
+        exit
       end
 
       if @options.empty?
