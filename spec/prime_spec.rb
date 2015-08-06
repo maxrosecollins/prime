@@ -5,7 +5,7 @@ describe Prime do
     expect(Prime::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it "returns missing argument if none supplied" do
+    expect(`ruby #{Dir.pwd}/bin/prime --count `).to include("missing argument: --count")
   end
 end

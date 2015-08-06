@@ -2,3 +2,4 @@
 require 'prime'
 
 prime = Prime::Start.new
+prime.run

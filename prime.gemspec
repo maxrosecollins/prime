@@ -6,9 +6,9 @@ require 'prime/version'
 Gem::Specification.new do |spec|
   spec.authors       = ["Max Rose-Collins"]
   spec.email         = ["max@maxrosecollins.com"]
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "prime number generator"
+  spec.description   = "a program that prints a multiplication table of primes numbers."
+  spec.homepage      = "https://github.com/maxrosecollins/prime"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -19,7 +19,8 @@ Gem::Specification.new do |spec|
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         = `git ls-files`.split($\)
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.executables   = ["prime"]
   spec.name          = "prime"
   spec.require_paths = ["lib"]
